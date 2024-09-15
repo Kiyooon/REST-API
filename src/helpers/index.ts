@@ -1,7 +1,10 @@
 import crypto from 'crypto';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Secret key used for hashing
-const SECRET = 'KIYOON-REST-API';
+const SECRET = process.env.SECRET;
 
 // Generates a random string of 128 bytes encoded in base64
 export const random = () => crypto.randomBytes(128).toString('base64');
